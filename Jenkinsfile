@@ -1,1 +1,3 @@
-Pipelin
+Pipeline {
+
+}
