@@ -6,9 +6,18 @@ pipeline {
         echo "This is build stage"
       }
     }
-    stage ('Test') {
-      steps {
-        echo "This is test stage"
+    stage ('Test Parallel') {
+      parallel {
+        stage ('Test on CHROME') {
+          steps {
+            echo "This is testin in CHROME"
+          } 
+        }
+        stage ('Test on OPERA') {
+          steps {
+            echo "This is testin in OPERA"
+          } 
+        }
       }
     }
     stage ('Deploy') {
